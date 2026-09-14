@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Entries</title>
+    <title>All Entries</title>
     <link rel="stylesheet" href="/css/entries.css">
 </head>
 <body>
     <%- include('./partials/navbar') %>
 
     <main class="entries-page">
-        <h1 class="page-title">My Entries</h1>
+        <h1 class="page-title">All Entries</h1>
+
+        <% if (entries.length === 0) { %>
+            <p class="empty-state">No entries yet.</p>
+        <% } %>
 
         <div class="entries-list">
             <% for (let entry of entries) { %>
@@ -24,7 +28,7 @@
 
                     <p class="entry-body"><%= entry.entryBody %></p>
 
-                    <% if (entry.owner.toString() === user._id.toString()) { %>
+                    <% if (user && entry.owner && entry.owner.toString() === user._id.toString()) { %>
                         <div class="entry-actions">
                             <a href="/entries/<%= entry._id %>/edit" class="btn btn-edit">Edit</a>
                             <form action="/entries/<%= entry._id %>?_method=DELETE" method="POST" class="inline-form">

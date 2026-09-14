@@ -1,0 +1,110 @@
+.form-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+}
+
+.entry-form {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 28px 28px 24px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    color: #1e293b;
+    resize: vertical;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #04b8d0;
+    box-shadow: 0 0 0 3px rgba(4, 208, 254, 0.15);
+}
+
+.char-hint {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    align-self: flex-end;
+}
+
+.form-group-checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #04b8d0;
+    cursor: pointer;
+}
+
+.form-group-checkbox label {
+    font-weight: 500;
+    color: #1e293b;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 9px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn-cancel {
+    background-color: #e2e8f0;
+    color: #1e293b;
+}
+
+.btn-cancel:hover {
+    background-color: #cbd5e1;
+}
+
+.btn-submit {
+    background-color: #04b8d0;
+    color: #ffffff;
+}
+
+.btn-submit:hover {
+    background-color: #039bb0;
+}

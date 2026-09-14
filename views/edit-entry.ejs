@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Entry</title>
+    <link rel="stylesheet" href="/css/entries.css">
+    <link rel="stylesheet" href="/css/entry-form.css">
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+
+    <main class="form-page">
+        <h1 class="page-title">Edit Entry</h1>
+
+        <form action="/entries/<%= entry._id %>?_method=PUT" method="POST" class="entry-form">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" value="<%= entry.title %>" required maxlength="100">
+            </div>
+
+            <div class="form-group">
+                <label for="entryBody">Entry Body</label>
+                <textarea id="entryBody" name="entryBody" maxlength="350" ><%= entry.entryBody %></textarea>
+                <span class="char-hint">Max 350 characters</span>
+            </div>
+
+            <div class="form-group form-group-checkbox">
+                <input type="checkbox" id="isPublic" name="isPublic" <%= entry.isPublic ? "checked" : "" %>>
+                <label for="isPublic">Make this entry public</label>
+            </div>
+
+            <div class="form-actions">
+                <a href="/entries/my-entries" class="btn btn-cancel">Cancel</a>
+                <button type="submit" class="btn btn-submit">Update Entry</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
