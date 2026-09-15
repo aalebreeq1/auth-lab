@@ -28,7 +28,7 @@
 
                     <p class="entry-body"><%= entry.entryBody %></p>
 
-                    <% if (entry.owner.toString() === user._id.toString()) { %>
+                    <% if (entry.owner.toString() === user._id.toString() ) { %>
                         <div class="entry-actions">
                             <a href="/entries/<%= entry._id %>/edit" class="btn btn-edit">Edit</a>
                             <form action="/entries/<%= entry._id %>?_method=DELETE" method="POST" class="inline-form">
